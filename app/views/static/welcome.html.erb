@@ -2,11 +2,7 @@
 
 <form action='/votes' method='post'>
   <div class='form-field'>
-    <label>Wass yo name?</label>
-    <input autofocus type='text' name='vote[person_name]'>
-  </div>
-  <div class='form-field'>
-    <label>Pick a location for FUN</label>
+    <label>Pick the ones you would go to!</label>
     <ul>
       <% Location.order(:name).all.each do |location| %>
         <li>
@@ -17,6 +13,10 @@
         </li>
       <% end %>
     </ul>
+  </div>
+  <div class='form-field'>
+    <label>Wass yo name?</label>
+    <input autofocus type='text' name='vote[person_name]'>
   </div>
   <div class='form-field'>
     <input type='submit' value='Submit'>
