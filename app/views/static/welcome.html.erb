@@ -1,0 +1,42 @@
+<h1><%= @poll.title %></h1>
+
+<form action='/votes' method='post'>
+  <div class='form-field'>
+    <label>Wass yo name?</label>
+    <input autofocus type='text' name='vote[person_name]'>
+  </div>
+  <div class='form-field'>
+    <label>Pick a location for FUN</label>
+    <ul>
+      <% Location.all.each do |location| %>
+        <li>
+          <label>
+            <input type='checkbox' name="vote[locations][<%= location.id %>]">
+            <%= location.name %>
+          </label>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class='form-field'>
+    <input type='submit' value='Submit'>
+  </div>
+</form>
+
+
+<% if @show_results %>
+  <h2>Results</h2>
+  <% if @vote_groups.present? %>
+    <ol>
+      <% @vote_groups.each do |location, votes| %>
+        <li>
+          <%= location.name %>: <%= votes.count %>
+          <br><span>(<%= votes.map(&:person_name).join(', ') %>)</span>
+        </li>
+      <% end %>
+    </ol>
+  <% else %>
+    <p>No one voted yet :(</p>
+  <% end %>
+
+<% end %>

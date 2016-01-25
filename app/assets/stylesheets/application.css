@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  font-family: 'Helvetica Neue', Helvetica, Arial;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  padding-left: 100px;
+}
+
+.main {
+  padding: 10px;
+  width: 768px;
+}
+
+
+input[type='submit'] {
+  padding: 5px 10px;
+}
+
+ul li, ol li {
+  margin-bottom: 10px;
+}
+
+form .form-field {
+  margin-bottom: 24px;
+}
