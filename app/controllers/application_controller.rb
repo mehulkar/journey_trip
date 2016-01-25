@@ -7,4 +7,6 @@ class ApplicationController < ActionController::Base
   def set_only_poll
     @poll ||= Poll.find_or_create_by(title: 'Where should we Journey to in 2016?')
   end
+
+  http_basic_authenticate_with name: "", password: ENV['BASIC_AUTH_PW']
 end
