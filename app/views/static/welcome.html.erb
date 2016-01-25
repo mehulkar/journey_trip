@@ -8,7 +8,7 @@
   <div class='form-field'>
     <label>Pick a location for FUN</label>
     <ul>
-      <% Location.all.each do |location| %>
+      <% Location.order(:name).all.each do |location| %>
         <li>
           <label>
             <input type='checkbox' name="vote[locations][<%= location.id %>]">
