@@ -5,3 +5,11 @@
   background: transparentize(yellow, 0.2);
   border: solid 3px darken(yellow, 10%);
 }
+
+.alert {
+  width: 50em;
+  margin: 0 auto 10px;
+  padding: 5px 10px;
+  background: transparentize(red, 0.3);
+  border: solid 3px darken(red, 10%);
+}
